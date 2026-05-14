@@ -81,7 +81,6 @@ export default function NetflixLoveSite() {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
-
       {/* HERO */}
       <div className="relative h-[80vh] overflow-hidden">
         <video
@@ -180,43 +179,41 @@ export default function NetflixLoveSite() {
       ))}
 
       {/* MODAL VIDEO */}
-{playingItem && (
-  <div className="fixed inset-0 bg-black/95 z-50 flex flex-col">
+      {playingItem && (
+        <div className="fixed inset-0 bg-black/95 z-50 flex flex-col">
+          <button
+            onClick={() => setPlayingVideo(null)}
+            className="fixed top-6 right-6 z-[9999] bg-red-600 hover:bg-red-500 px-5 py-3 rounded-xl text-2xl font-bold transition"
+          >
+            ✕
+          </button>
 
-    <button
-      onClick={() => setPlayingVideo(null)}
-      className="fixed top-6 right-6 z-[9999] bg-red-600 hover:bg-red-500 px-5 py-3 rounded-xl text-2xl font-bold transition"
-    >
-      ✕
-    </button>
+          <div className="flex-1 flex items-center justify-center p-4">
+            <video
+              src={playingItem.video}
+              controls
+              autoPlay
+              playsInline
+              onLoadedData={(e) => {
+                e.currentTarget.muted = false;
+                e.currentTarget.volume = 1;
+                e.currentTarget.play();
+              }}
+              className="w-full h-full object-contain rounded-xl"
+            />
+          </div>
+        </div>
+      )}
 
-    <div className="flex-1 flex items-center justify-center p-4">
-      <video
-       src={playingItem.video}
-        controls
-        autoPlay
-        playsInline
-        onLoadedData={(e) => {
-        e.currentTarget.muted = false;
-        e.currentTarget.volume = 1;
-        e.currentTarget.play();
-         }}
-  className="w-full h-full object-contain rounded-xl"
-/>
-    </div>
-
-  </div>
-)}  
       {/* FIN */}
       <div className="text-center py-20 px-6">
         <h2 className="text-4xl md:text-6xl font-extrabold mb-6">
           Merci pour tous ces souvenirs ❤️
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Et ce n’est que le début de notre série.
+          Et ce n'est que le début de notre série.
         </p>
       </div>
-
     </div>
   );
 }
