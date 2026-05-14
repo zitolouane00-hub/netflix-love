@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 const SECTIONS = [
   {
@@ -59,9 +59,8 @@ const SECTIONS = [
 ];
 
 export default function NetflixLoveSite() {
-  const [showAllThemes, setShowAllThemes] = useState(false);
+  const [showAllThemes, setShowAllThemes] = useState<boolean>(false);
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
-  const videoRef = useRef(null);
 
   const allVideos = SECTIONS.flatMap((s) => s.items);
   const playingItem = playingVideo
