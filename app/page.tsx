@@ -190,19 +190,19 @@ export default function NetflixLoveSite() {
       ✕
     </button>
 
-    <div className="flex-1 flex items-center justify-center p-4">
+    <div className="flex-1 flex items-center justify-center p-8 w-full h-full">
       <video
-       src={playingItem.video}
+        src={playingItem.video}
         controls
         autoPlay
         playsInline
         onLoadedData={(e) => {
-        e.currentTarget.muted = false;
-        e.currentTarget.volume = 1;
-        e.currentTarget.play();
-         }}
-  className="w-full h-full object-contain rounded-xl"
-/>
+          e.currentTarget.muted = false;
+          e.currentTarget.volume = 1;
+          e.currentTarget.play();
+        }}
+        className="max-w-full max-h-full rounded-xl"
+      />
     </div>
 
   </div>
