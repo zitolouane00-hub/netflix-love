@@ -24,16 +24,12 @@
   },
   "include": [
     "next-env.d.ts",
-    "app/**/*.ts",
-    "app/**/*.tsx",
+    "app/page.tsx",
+    "app/layout.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "app/page-*.tsx",
-    "app/watch*.tsx",
-    "app/theme*.tsx"
+    "node_modules"
   ]
 }
