@@ -60,7 +60,7 @@ const SECTIONS = [
 
 export default function NetflixLoveSite() {
   const [showAllThemes, setShowAllThemes] = useState(false);
-  const [playingVideo, setPlayingVideo] = useState(null);
+  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
   const videoRef = useRef(null);
 
   const allVideos = SECTIONS.flatMap((s) => s.items);
