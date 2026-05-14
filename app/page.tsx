@@ -3,7 +3,20 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-const SECTIONS = [
+interface VideoItem {
+  id: string;
+  title: string;
+  image: string;
+  video: string;
+  description: string;
+}
+
+interface Section {
+  title: string;
+  items: VideoItem[];
+}
+
+const SECTIONS: Section[] = [
   {
     title: "Continuer à regarder",
     items: [
